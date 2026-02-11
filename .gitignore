@@ -5,4 +5,12 @@ __pycache__/
 .venv/
 venv/
 cloudflared.exe
+<<<<<<< Updated upstream
 .exe
+=======
+files.zip
+*.pdf
+*.pptx
+restart.log
+.pushkin_bot.lock
+>>>>>>> Stashed changes

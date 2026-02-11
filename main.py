@@ -373,22 +373,14 @@ def send_mini_app_button(chat_id):
 
 
 def send_start_message_with_mini_app(chat_id):
-    """Send one message with bot purpose and Mini App button."""
+    """Send one message with bot purpose (without Mini App button)."""
     start_text = (
         "<b>Pushkin AI</b>\n\n"
         "This bot helps with literature: analysis of books and poems, characters, conflicts, "
         "author intent, and study preparation.\n\n"
-        "Tap the button below to open Mini App and chat in a mobile-friendly interface."
+        "Send a title and author, and I will provide a structured literary analysis."
     )
-    markup = build_mini_app_markup()
-    if markup:
-        bot.send_message(chat_id, start_text, parse_mode='HTML', reply_markup=markup)
-    else:
-        bot.send_message(
-            chat_id,
-            start_text + "\n\nMini App is temporarily unavailable: URL is not configured yet.",
-            parse_mode='HTML'
-        )
+    bot.send_message(chat_id, start_text, parse_mode='HTML')
 
 @bot.message_handler(commands=["miniapp"])
 def miniapp_handler(message):

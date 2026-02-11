@@ -375,10 +375,20 @@ def send_mini_app_button(chat_id):
 def send_start_message_with_mini_app(chat_id):
     """Send one message with bot purpose (without Mini App button)."""
     start_text = (
-        "<b>Pushkin AI</b>\n\n"
-        "This bot helps with literature: analysis of books and poems, characters, conflicts, "
-        "author intent, and study preparation.\n\n"
-        "Send a title and author, and I will provide a structured literary analysis."
+        """<b>Привет, я Pushkin AI!</b>
+        
+        Я специализируюсь на анализе литературных произведений.
+        
+        <b>Как использовать:</b>
+        1. Отправьте мне название произведения и автора
+        2. Я сделаю подробный литературный анализ
+        
+        <i>Примеры запросов:</i>
+        • "Преступление и наказание, Федор Достоевский"
+        • "Евгений Онегин, Александр Пушкин"
+        • "Мастер и Маргарита, Михаил Булгаков"
+        
+        <code>Важно:</code> Я занимаюсь только разбором литературных произведений"""
     )
     bot.send_message(chat_id, start_text, parse_mode='HTML')
 
